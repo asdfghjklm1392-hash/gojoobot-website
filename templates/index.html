@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="معرفی و راهنمای گو جو بات در پیام‌رسان بله">
+  <title>گو جو بات | ربات سرگرمی و بازی</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Tahoma, Arial, sans-serif; color: #eef4ff;
+      background: radial-gradient(circle at 80% 0%, #173b72 0, transparent 35%),
+                  linear-gradient(145deg, #07101f, #0d1830 55%, #080e1c);
+      line-height: 1.9;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, 92%); margin: auto; }
+    header { padding: 22px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:bold; font-size:20px; }
+    .brand img { width:54px; height:54px; object-fit:cover; border-radius:50%; border:2px solid #55a8ff; }
+    nav { display:flex; gap:18px; flex-wrap:wrap; color:#c8d8f2; font-size:14px; }
+    nav a:hover { color:#69b5ff; }
+    .hero { text-align:center; padding:55px 0 45px; }
+    .hero img { width:120px; height:120px; object-fit:cover; border-radius:50%; border:3px solid #48a8ff; box-shadow:0 0 35px #1685ff55; }
+    h1 { font-size:clamp(30px, 5vw, 48px); margin:18px 0 8px; }
+    .muted { color:#b3c4df; }
+    .btn { display:inline-block; background:linear-gradient(90deg,#1687f8,#4b69ff); padding:11px 24px; border-radius:12px; font-weight:bold; margin:10px 5px; box-shadow:0 8px 24px #1478ed33; }
+    .btn.secondary { background:#1a2b49; border:1px solid #36547f; box-shadow:none; }
+    section { padding:28px 0; }
+    .section-title { font-size:25px; margin:0 0 18px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; }
+    .card { background:#111f37d9; border:1px solid #263e62; border-radius:17px; padding:19px; }
+    .card h3 { margin:0 0 8px; color:#8fc8ff; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; }
+    .stat { text-align:center; background:#142744; border:1px solid #2c4d78; padding:18px; border-radius:15px; }
+    .stat strong { display:block; font-size:30px; color:#71bdff; }
+    code { direction:ltr; display:inline-block; background:#071323; color:#8fc8ff; border:1px solid #29486e; border-radius:7px; padding:2px 9px; }
+    .command { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px solid #253957; }
+    .command:last-child { border:0; }
+    footer { border-top:1px solid #263e62; margin-top:35px; padding:25px 0; text-align:center; color:#9fb2d0; }
+    .note { font-size:12px; color:#9fb2d0; }
+    @media(max-width:650px) { header { align-items:flex-start; flex-direction:column; } nav { gap:12px; } .hero { padding-top:30px; } }
+  </style>
+</head>
+<body>
+<header class="wrap">
+  <div class="brand"><img src="{{ url_for('static', filename='logo.jpg') }}" alt="لوگوی گو جو بات"><span>گو جو بات</span></div>
+  <nav>
+    <a href="#about">معرفی</a><a href="#commands">دستورها</a><a href="#games">بازی‌ها</a><a href="#ads">تبلیغات</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero wrap" id="about">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="لوگوی گو جو بات">
+    <h1>به گو جو بات خوش آمدید!</h1>
+    <p class="muted">ربات سرگرمی، بازی و امکانات جذاب در پیام‌رسان بله</p>
+    <a class="btn" href="https://ble.ir/Mm1392bot" target="_blank" rel="noopener">ورود به ربات در بله</a>
+    <a class="btn secondary" href="#commands">راهنمای دستورها</a>
+  </div>
+
+  <section class="wrap">
+    <h2 class="section-title">آمار ربات</h2>
+    <div class="stats">
+      <div class="stat"><strong>۲۷</strong>کاربر ماهانه <div class="note">طبق تصویر فعلی ربات</div></div>
+      <div class="stat"><strong>۱۰+</strong>دستور کاربردی<div class="note">برای استفاده آسان‌تر</div></div>
+      <div class="stat"><strong>۵</strong>بازی معرفی‌شده<div class="note">سرگرمی داخل ربات</div></div>
+    </div>
+    <p class="note">آمار بالا فعلاً ثابت و نمونه است و به آمار زنده بله متصل نیست.</p>
+  </section>
+
+  <section class="wrap" id="commands">
+    <h2 class="section-title">دستورهای ربات</h2>
+    <div class="card">
+      <div class="command"><span>شروع ربات</span><code>/start</code></div>
+      <div class="command"><span>راهنمای استفاده</span><code>/help</code></div>
+      <div class="command"><span>فهرست بازی‌ها</span><code>/games</code></div>
+      <div class="command"><span>فروشگاه ربات</span><code>/shop</code></div>
+      <div class="command"><span>پروفایل کاربر</span><code>/profile</code></div>
+      <div class="command"><span>برترین کاربران</span><code>/top</code></div>
+      <div class="command"><span>جایزه روزانه</span><code>/daily</code></div>
+      <div class="command"><span>ساعت و تاریخ</span><code>/time</code></div>
+      <div class="command"><span>دیدن آیدی عددی</span><code>/myid</code></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="games">
+    <h2 class="section-title">بازی‌های ربات</h2>
+    <div class="grid">
+      <div class="card"><h3>✊ سنگ، کاغذ، قیچی</h3><p class="muted">با ربات بازی کن و نتیجه را ببین.</p></div>
+      <div class="card"><h3>⭕ دوز</h3><p class="muted">یک بازی فکری و دونفره.</p></div>
+      <div class="card"><h3>🔢 حدس عدد</h3><p class="muted">عدد مخفی را پیدا کن.</p></div>
+      <div class="card"><h3>🎲 تاس</h3><p class="muted">تاس بینداز و شانس خودت را امتحان کن.</p></div>
+      <div class="card"><h3>🪙 شیر یا خط</h3><p class="muted">یکی از دو حالت را انتخاب کن.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="ads">
+    <h2 class="section-title">تبلیغات و همکاری</h2>
+    <div class="card">
+      <h3>می‌خواهی تبلیغت در گو جو بات منتشر شود؟</h3>
+      <p class="muted">برای هماهنگی و ثبت سفارش تبلیغات، به مدیر پیام بده.</p>
+      <a class="btn" href="https://ble.ir/kfkfjfj" target="_blank" rel="noopener">ارتباط با مدیر تبلیغات</a>
+      <p class="note">پیش از انتشار، درباره هزینه، زمان و شرایط تبلیغ با مدیر هماهنگ کن.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© گو جو بات — ساخته‌شده با Python و Flask</div>
+</footer>
+</body>
+</html>
 
